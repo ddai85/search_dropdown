@@ -1,0 +1,32 @@
+#container {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#searchinput {
+  width: 100px;
+  border-radius: 5px;
+  padding: 2px;
+  z-index: 0;
+}
+
+#dropdown {
+  width: 105px;
+  position: absolute;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 2px 3px lightgrey;
+  z-index: 100;
+}
+
+#dropdown ul {
+  list-style-type: none;
+  padding: 2px;
+  margin: 2px;
+}
+
+#dropdown li:hover {
+  color: white;
+  background-color: grey;
+}
