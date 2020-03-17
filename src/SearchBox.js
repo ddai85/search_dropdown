@@ -24,7 +24,7 @@ export default class SearchBox extends React.Component {
       this.setState({ searchList: [], searchTerm: searchTerm });
       return;
     }
-    const regex = new RegExp(searchTerm, "gi");
+    const regex = new RegExp(escapeRegExp(searchTerm), "gi");
     const filteredList = this.props.searchTerms.filter(term => {
       return term.match(regex);
     });
@@ -76,3 +76,8 @@ export default class SearchBox extends React.Component {
 SearchBox.propTypes = {
   searchTerms: PropTypes.array
 };
+
+// Helper function to escape symbols
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
